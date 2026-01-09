@@ -188,6 +188,7 @@ def get_incidents_by_session_id(session_id, project_id):
                                         `$event_name`            AS type
                                  FROM product_analytics.events
                                  WHERE session_id = %(session_id)s
+                                   AND project_id = %(project_id)s                                   
                                    AND `$event_name` = 'ISSUE'
                                    AND `$auto_captured`
                                    AND issue_type = 'incident'
